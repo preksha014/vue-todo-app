@@ -33,12 +33,24 @@
     line-height: 1.6;
 }
 
-.about-content p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.about-content p:last-child {
-    margin-bottom: 0;
+.about-content p {
+    margin: 0;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    padding: 1rem;
+    background-color: var(--color-background-mute);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.about-content p:hover {
+    transform: translateY(-2px);
 }
 </style>

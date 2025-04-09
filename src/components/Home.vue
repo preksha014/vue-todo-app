@@ -18,8 +18,10 @@ import FilterList from './FilterList.vue'
 .home-container {
     min-height: calc(100vh - 120px);
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 2rem;
-    padding-top: calc(2rem + 60px);
+    padding-top: 2rem;
     background-color: var(--color-background);
     display: flex;
     justify-content: center;
@@ -28,6 +30,11 @@ import FilterList from './FilterList.vue'
 
 .todo-section {
     width: 100%;
+    background-color: var(--color-background-soft);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     max-width: 800px;
     background-color: var(--color-background-soft);
     border-radius: 12px;

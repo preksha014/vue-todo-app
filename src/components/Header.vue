@@ -1,7 +1,9 @@
 <template>
     <header class="app-header">
-        <h1>Header</h1>
-        <button>➤</button> <!-- Placeholder for the icon/button (using a right arrow) -->
+        <h1>Todo App</h1>
+        <button class="theme-toggle" title="Toggle theme">
+            <span class="toggle-icon">🌙</span>
+        </button>
     </header>
 </template>
 
@@ -10,40 +12,56 @@
 
 <style scoped>
 .app-header {
-    background-color: #2C3E50;
-    /* Dark blue color matching the image */
-    color: white;
+    background-color: var(--color-background-soft);
+    color: var(--color-heading);
     width: 100%;
     height: 60px;
-    /* Approximate height based on the image */
     display: flex;
     align-items: center;
     padding: 0 20px;
-    /* Adds some padding for spacing */
     box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .app-header h1 {
     margin: 0;
-    /* Remove default margin */
     font-size: 24px;
-    /* Adjust font size to match the image */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, var(--color-heading), var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.app-header button {
+.theme-toggle {
     margin-left: auto;
-    /* Pushes the button to the right */
     background: none;
-    border: none;
-    color: white;
+    border: 2px solid var(--color-border);
+    color: var(--color-text);
     cursor: pointer;
-    font-size: 20px;
-    padding: 5px;
-    /* Small padding for clickable area */
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-background-mute);
+    transform: scale(1.05);
+}
+
+.toggle-icon {
+    font-size: 18px;
+    line-height: 1;
 }
 </style>
