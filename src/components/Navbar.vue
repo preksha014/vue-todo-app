@@ -1,23 +1,22 @@
 <template>
     <nav class="navbar">
-        <ul>
-            <button @click="$emit('update-tab', 'Home')" :class="{ active: activeTab === 'Home' }">Home</button>
-            <button @click="$emit('update-tab', 'About')" :class="{ active: activeTab === 'About' }">About</button>
-            <button @click="$emit('update-tab', 'Contact')"
-                :class="{ active: activeTab === 'Contact' }">Contact</button>
-        </ul>
+        <div class="nav-links">
+            <router-link to="/" class="navbar-link" active-class="active">Home</router-link>
+            <router-link to="/about" class="navbar-link" active-class="active">About</router-link>
+            <router-link to="/contact" class="navbar-link" active-class="active">Contact</router-link>
+        </div>
     </nav>
 </template>
 
 <script setup>
-defineProps({
-    activeTab: {
-        type: String,
-        required: true
-    }
-});
+// defineProps({
+//     activeTab: {
+//         type: String,
+//         required: true
+//     }
+// });
 
-defineEmits(['update-tab']);
+// defineEmits(['update-tab']);
 </script>
 
 <style scoped>
@@ -26,31 +25,30 @@ defineEmits(['update-tab']);
     height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 20px;
     background-color: var(--color-background-soft);
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
     backdrop-filter: blur(10px);
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.nav-links {
     display: flex;
-    gap: 20px;
-    width: 100%;
+    gap: 1.5rem;
     justify-content: center;
 }
 
-button {
+.navbar-link {
+    position: relative;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
     background: none;
     border: none;
-    padding: 0.5rem 1rem;
-    margin: 0;
     cursor: pointer;
     color: var(--color-text);
     font-size: 0.9rem;
@@ -58,13 +56,36 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+.navbar-link:hover {
     background-color: var(--color-background-mute);
+    transform: translateY(-2px);
 }
 
-button.active {
-    background: linear-gradient(45deg, var(--color-heading), var(--color-text));
-    color: var(--color-background);
-    font-weight: 500;
+.navbar-link.active {
+    background: none;
+    color: var(--color-heading);
+    font-weight: 600;
+    box-shadow: none;
 }
+
+.navbar-link.active::after {
+    width: 70%;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, var(--color-heading), var(--color-text));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-link:hover::after {
+    width: 70%;
+}
+
 </style>

@@ -1,17 +1,13 @@
 <script setup>
-import { ref } from 'vue';
 import Header from './components/Header.vue'
-import Home from './components/Home.vue'
-import About from './components/About.vue'
-import Contact from './components/Contact.vue'
-import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue';
 
-const activeTab = ref('Home');
-const tabMap = {
-    Home: Home,
-    About: About,
-    Contact: Contact
-};
+// const activeTab = ref('Home');
+// const tabMap = {
+//     Home: Home,
+//     About: About,
+//     Contact: Contact
+// };
 
 </script>
 
@@ -21,11 +17,9 @@ const tabMap = {
   <div id="app">
     <Header />
     <main>
-      <keep-alive>
-        <component :is="tabMap[activeTab]" />
-      </keep-alive>
+      <router-view></router-view>
     </main>
-    <Navbar :active-tab="activeTab" @update-tab="activeTab = $event" />
+    <Footer />
   </div>
 </template>
 
@@ -48,14 +42,13 @@ main {
   justify-content: center;
   box-sizing: border-box;
   background-color: var(--color-background);
-  margin: 60px 0;
-  padding: 1rem;
-  padding-bottom: 80px;
+  padding: 0;
+  min-height: calc(100vh - 120px);
 }
 
 @media (max-width: 768px) {
   main {
-    padding: 1rem;
+    padding: 0 0.5rem;
   }
 }
 </style>

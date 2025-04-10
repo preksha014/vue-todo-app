@@ -48,36 +48,42 @@ const handleSubmit = () => {
 <style scoped>
 .contact-container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 0;
+    padding: 1.8rem;
     background-color: var(--color-background-soft);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    margin-top: 80px; /* Account for header height */
+    margin-bottom: 80px; /* Account for footer height */
+    border: 1px solid var(--color-border);
 }
 
 .contact-title {
     color: var(--color-heading);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
     font-weight: 600;
     background: linear-gradient(45deg, var(--color-heading), var(--color-text));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
+    -webkit-text-fill-color: transparent;
 }
 
 .contact-description {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--color-text);
     font-size: 1.1rem;
-    line-height: 1.6
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .form-group {
@@ -94,38 +100,41 @@ const handleSubmit = () => {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1.2rem;
     border: 2px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: var(--color-background);
     color: var(--color-text);
     font-size: 1rem;
     transition: all 0.3s ease;
-    outline: none
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--color-heading);
-    box-shadow: 0 0 0 3px rgba(var(--color-heading-rgb), 0.1)
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+    transform: translateY(-2px);
 }
 
 .submit-button {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.85rem;
     background: linear-gradient(45deg, var(--color-heading), var(--color-text));
     color: var(--color-background);
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
 }
 
 .submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 </style>

@@ -14,18 +14,25 @@
 <style scoped>
 .about-container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 0 auto;
+    padding: 2.5rem;
     background-color: var(--color-background-soft);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    margin-top: 80px; /* Account for header height */
+    margin-bottom: 80px; /* Account for footer height */
+    border: 1px solid var(--color-border);
 }
 
 .about-title {
     color: var(--color-heading);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--color-heading), var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-content {
@@ -36,7 +43,6 @@
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .about-content p {
@@ -44,9 +50,7 @@
     line-height: 1.8;
     color: var(--color-text);
     font-size: 1.1rem;
-    padding: 1rem;
-    background-color: var(--color-background-mute);
-    border-radius: 8px;
+    padding: 0.5rem;
     transition: transform 0.3s ease;
 }
 

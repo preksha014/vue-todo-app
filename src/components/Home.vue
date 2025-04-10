@@ -18,10 +18,11 @@ import FilterList from './FilterList.vue'
 .home-container {
     min-height: calc(100vh - 120px);
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
-    padding-top: 2rem;
+    padding-top: 80px; /* Account for header height */
+    padding-bottom: 80px; /* Account for footer height */
     background-color: var(--color-background);
     display: flex;
     justify-content: center;
@@ -31,16 +32,13 @@ import FilterList from './FilterList.vue'
 .todo-section {
     width: 100%;
     background-color: var(--color-background-soft);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(10px);
     max-width: 800px;
-    background-color: var(--color-background-soft);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
 }
 
 @media (min-width: 1024px) {

@@ -47,11 +47,8 @@ const addTodo = () => {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 2rem;
-    background: var(--color-background);
+    margin-bottom: 1rem;
     padding: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
